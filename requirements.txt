@@ -1,0 +1,12 @@
+django
+gunicorn
+django-heroku
+djangorestframework
+markdown
+django-filter
+requests
+pycryptodome
+bs4
+html5lib
+django-cors-headers
+lxml
