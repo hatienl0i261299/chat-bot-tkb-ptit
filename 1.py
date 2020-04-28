@@ -164,24 +164,24 @@ TEST_CASE = [
 
 if __name__ == '__main__':
     os.system('cls')
-    for test in TEST_CASE:
-        sys.stdout.write(f"\t{test.get('name')}\n")
-        # sys.stdout.write("Nhap n >> ")
-        # n = int(input())
-        # sys.stdout.write("Nhap Ptc >> ")
-        # ptc = float(input())
+    # for test in TEST_CASE:
+    #     sys.stdout.write(f"\t{test.get('name')}\n")
+    sys.stdout.write("Nhap n >> ")
+    n = int(input())
+    sys.stdout.write("Nhap Ptc >> ")
+    ptc = float(input())
 
-        n = test.get('n')
-        ptc = test.get("ptc")
-        lst = test.get("list")
-        # lst = []
-        # for i in range(n):
-        #     sys.stdout.write(f"Nhap phan tu {i + 1} >> ")
-        #     lst.append(float(input()))
+    # n = test.get('n')
+    # ptc = test.get("ptc")
+    # lst = test.get("list")
+    lst = []
+    for i in range(n):
+        sys.stdout.write(f"Nhap phan tu {i + 1} >> ")
+        lst.append(float(input()))
 
-        sys.stdout.write("Cac ket qua do %s\n\n" % lst)
-        lst, epsilon, trungbinh = abcdef(lst)
-        sys.stdout.write(
-            'Ket qua do : %s +- %s * %s\n' % (trungbinh, data.get(len(lst)).get(ptc), epsilon / sqrt(len(lst))))
-        sys.stdout.write("List phan tu sau khi remove %s" % lst)
-        sys.stdout.write('\n\n\n\n')
+    sys.stdout.write("Cac ket qua do %s\n\n" % lst)
+    lst, epsilon, trungbinh = abcdef(lst)
+    sys.stdout.write(
+        'Ket qua do : %s +- %s * %s\n' % (trungbinh, data.get(len(lst)).get(ptc), epsilon / sqrt(len(lst))))
+    sys.stdout.write("List phan tu sau khi remove %s" % lst)
+    sys.stdout.write('\n\n\n\n')

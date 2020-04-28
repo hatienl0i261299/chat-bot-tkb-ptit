@@ -15,18 +15,21 @@ class extractTKB_PTIT():
         self._default_html = '''<!doctype html>
     <html lang="en">
     <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <style type="text/css">
             body {
-                font-size: medium;
+                font-size: large;
                 font-family: 'Lora', serif;
-                line-height: 40px;
+                line-height: 55px;
             !important;
             }
 
             td {
                 font-weight: bold;
-                padding-left: 3px;
-                padding-right: 3px;
+                padding-left: 2px;
+                padding-right: 2px;
             }
         </style>
     </head>
@@ -89,6 +92,8 @@ class extractTKB_PTIT():
 
         data = []
         _masv, _name, _class = [None] * 3
+        if self._masv.lower() == "boss":
+            self._masv = "b17dcvt220"
         if self._masv:
             if not re.match(self._regex_masv, self._masv):
                 return {
@@ -176,6 +181,8 @@ class extractTKB_PTIT():
         }
 
     def get_img(self):
+        if self._masv.lower() == "boss":
+            self._masv = "b17dcvt220"
         if self._masv:
             if not re.match(self._regex_masv, self._masv):
                 return {
@@ -220,6 +227,8 @@ class extractTKB_PTIT():
             div_tkb = soup.find('div', attrs={'id': 'ctl00_ContentPlaceHolder1_ctl00_pnlTuan'})
             html_string = self._default_html % (div_info, div_tkb)
             html_string = html_string.replace('\n', '').replace('width:90px', 'width:100%')
+            # with open("abcdef.html","w",encoding="utf-8") as f:
+            #     f.write(html_string)
             return {
                 "messages": [
                     {
